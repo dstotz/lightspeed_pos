@@ -28,5 +28,7 @@ module Lightspeed
       TaxCategory: :hash,
       CustomFieldValues: :hash,
     )
+
+    relationships :CreditAccounts
   end
 end

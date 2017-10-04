@@ -1,5 +1,6 @@
 require 'uri'
 require_relative 'categories'
+require_relative 'credit_accounts'
 require_relative 'customers'
 require_relative 'employees'
 require_relative 'items'
@@ -22,6 +23,7 @@ module Lightspeed
     )
     relationships(
       :Categories,
+      :CreditAccounts,
       :Customers,
       :Employees,
       :Images,
