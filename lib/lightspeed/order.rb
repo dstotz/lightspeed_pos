@@ -1,14 +1,16 @@
 require_relative 'resource'
 
+require_relative 'order_lines'
+
 module Lightspeed
   class Order < Lightspeed::Resource
     alias_method :archive, :destroy
 
     fields(
       orderID: :id,
-      orderedDate: :timestamp,
-      receivedDate: :timestamp,
-      arrivalDate: :timestamp,
+      orderedDate: :datetime,
+      receivedDate: :datetime,
+      arrivalDate: :datetime,
       shipInstructions: :integer,
       stockInstructions: :integer,
       shipCost: :decimal,
@@ -26,9 +28,10 @@ module Lightspeed
       Shop: :hash,
       OrderLines: :hash,
       CustomFieldValues: :hash,
-      timeStamp: :timestamp
+      timeStamp: :datetime
     )
 
+    relationships :OrderLines
   end
 end
 
