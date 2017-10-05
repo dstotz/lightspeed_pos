@@ -35,6 +35,7 @@ module Lightspeed
       get(params: params)['@attributes']['count'].to_i
     end
     alias_method :length, :size
+    alias_method :count, :size
 
     def each_loaded
       @resources ||= {}
